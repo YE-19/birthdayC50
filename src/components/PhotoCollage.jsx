@@ -3,41 +3,41 @@ import { motion } from 'framer-motion'
 export default function PhotoCollage({ onRestart }) {
   // مصفوفة الـ 6 صور مع نفس التوزيع، الزوايا، والأحجام المطابقة لـ Canva
   const PHOTOS = [
-    { 
+    {
       id: 1,
-      src: '/images/photo3.jpg', 
-      classes: 'absolute top-[7%] left-[4%] sm:left-[8%] w-[45%] sm:w-[32%] -rotate-6' 
+      src: '/images/photo3.jpg',
+      classes: 'absolute top-[7%] left-[4%] sm:left-[8%] w-[45%] sm:w-[32%] -rotate-6'
     },
-    { 
+    {
       id: 2,
-      src: '/images/photo4.jpg', 
-      classes: 'absolute top-[12%] right-[4%] sm:right-[8%] w-[43%] sm:w-[30%] rotate-3' 
+      src: '/images/photo4.jpg',
+      classes: 'absolute top-[12%] right-[4%] sm:right-[8%] w-[43%] sm:w-[30%] rotate-3'
     },
-    { 
+    {
       id: 3,
-      src: '/images/photo3.jpg', 
-      classes: 'absolute top-[37%] left-[5%] sm:left-[10%] w-[46%] sm:w-[34%] -rotate-3' 
+      src: '/images/photo3.jpg',
+      classes: 'absolute top-[37%] left-[5%] sm:left-[10%] w-[46%] sm:w-[34%] -rotate-3'
     },
-    { 
+    {
       id: 4,
-      src: '/images/photo4.jpg', 
-      classes: 'absolute top-[43%] right-[4%] sm:right-[8%] w-[45%] sm:w-[33%] rotate-6' 
+      src: '/images/photo4.jpg',
+      classes: 'absolute top-[43%] right-[4%] sm:right-[8%] w-[45%] sm:w-[33%] rotate-6'
     },
-    { 
+    {
       id: 5,
-      src: '/images/photo5.jpg', 
-      classes: 'absolute top-[68%] left-[4%] sm:left-[8%] w-[45%] sm:w-[32%] -rotate-6' 
+      src: '/images/photo5.jpg',
+      classes: 'absolute top-[68%] left-[4%] sm:left-[8%] w-[45%] sm:w-[32%] -rotate-6'
     },
-    { 
+    {
       id: 6,
-      src: '/images/photo6.jpg', 
-      classes: 'absolute top-[74%] right-[5%] sm:right-[10%] w-[44%] sm:w-[31%] rotate-2' 
+      src: '/images/photo6.jpg',
+      classes: 'absolute top-[74%] right-[5%] sm:right-[10%] w-[44%] sm:w-[31%] rotate-2'
     },
   ]
 
   return (
     <div className="relative w-full overflow-hidden bg-[#8c657a] px-4 py-10 sm:px-10">
-      
+
       {/* الإطارات الوردية (الخلفية) */}
       <img
         src="/images/flowers-left.png"
@@ -57,7 +57,7 @@ export default function PhotoCollage({ onRestart }) {
         للسماح للـ 6 صور بالتوزع براحة بدون أن تغطي بعضها البعض
       */}
       <div className="relative mx-auto w-full max-w-5xl h-[1400px] sm:h-[1800px] z-10">
-        
+
         {/* العنوان */}
         <motion.h2
           initial={{ opacity: 0, x: -20 }}
@@ -69,7 +69,7 @@ export default function PhotoCollage({ onRestart }) {
         </motion.h2>
 
         {/* الجملة النصية التي تظهر فوق الصور */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
@@ -90,10 +90,10 @@ export default function PhotoCollage({ onRestart }) {
             whileHover={{ scale: 1.05, zIndex: 40 }}
             className={`z-10 bg-white p-2 sm:p-3 shadow-[0_8px_25px_rgba(0,0,0,0.25)] transition-transform duration-300 ${photo.classes}`}
           >
-            <img 
-              src={photo.src} 
-              alt={`Collage pic ${photo.id}`} 
-              className="h-full w-full aspect-[3/4] object-cover" 
+            <img
+              src={photo.src}
+              alt={`Collage pic ${photo.id}`}
+              className="h-full w-full aspect-[3/4] object-cover"
             />
           </motion.div>
         ))}
